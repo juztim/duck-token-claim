@@ -36,7 +36,10 @@
 
 .connect {
   margin-bottom: 2rem;
-  width: 230px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .description {
