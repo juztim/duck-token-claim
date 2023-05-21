@@ -1,4 +1,4 @@
-import { ConnectWallet } from "@thirdweb-dev/react";
+import {Web3Button} from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 
@@ -11,11 +11,16 @@ const Home: NextPage = () => {
         </h1>
 
         <p className={styles.description}>
-          Claim your tokens by connecting your wallet using the button below!
+          Claim your tokens using the button below!
         </p>
 
         <div className={styles.connect}>
-          <ConnectWallet />
+          <Web3Button
+              contractAddress="0x2Da3a9d7bCEcECfa4f69fb46Fd2e9F0ded2AE12e"
+              action={(contract) => contract.erc20.claim(1)}
+              onSuccess={() => alert("Claimed!")}
+              onError={(err) => alert(err)}
+          >Claim</Web3Button>
         </div>
 
       </main>
